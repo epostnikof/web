@@ -39,6 +39,4 @@ server {
  
      server_name basist37.pp.ua;
     return 404; # managed by Certbot
-
-
 }
