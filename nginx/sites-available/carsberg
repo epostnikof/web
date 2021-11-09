@@ -1,13 +1,13 @@
 server {
 
-     root /var/www/html/webmail;
+     root /var/www/html/carlsberg.pp.ua;
 
-     index index.php;
+     index diary.html;
  
-     server_name mail.basist37.pp.ua;
+     server_name carlsberg.pp.ua;
  
      location / {
-             try_files $uri $uri/ /index.php$args;
+             try_files $uri $uri/ /index.html$args;
      }
  
      location ~ \.php$ {
@@ -22,14 +22,14 @@ server {
      }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/basist37.pp.ua/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/basist37.pp.ua/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/carlsberg.pp.ua/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/carlsberg.pp.ua/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 server {
-    if ($host = mail.basist37.pp.ua) {
+    if ($host = carlsberg.pp.ua) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
@@ -37,7 +37,7 @@ server {
 
      listen   80;
  
-     server_name mail.basist37.pp.ua;
+     server_name carlsberg.pp.ua;
     return 404; # managed by Certbot
 
 
